@@ -1,7 +1,5 @@
 package chunkgenerator.chunkgenerator;
 
-import org.bukkit.World;
-import org.bukkit.block.Biome;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

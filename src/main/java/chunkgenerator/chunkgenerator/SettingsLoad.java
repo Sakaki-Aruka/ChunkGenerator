@@ -1,8 +1,8 @@
 package chunkgenerator.chunkgenerator;
 
-import org.bukkit.Server;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.plugin.Plugin;
+
 
 public class SettingsLoad {
 
@@ -17,7 +17,7 @@ public class SettingsLoad {
 
     public void load(){
         Chunks = fc.getInt("Chunks");
-        new ChunkGenerator().plugin.getLogger().info("A number of load chunks was loaded.:"+Chunks);
+        Bukkit.getServer().getLogger().info("ChunkGenerator Loaded a config value.:"+Chunks);
     }
 
     public int getChunks(){

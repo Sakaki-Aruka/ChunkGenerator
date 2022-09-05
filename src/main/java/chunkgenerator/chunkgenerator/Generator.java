@@ -19,7 +19,7 @@ public class Generator implements CommandExecutor {
         if(!(sender instanceof Player)){
             return false;
         }
-        
+
 
         return true;
     }

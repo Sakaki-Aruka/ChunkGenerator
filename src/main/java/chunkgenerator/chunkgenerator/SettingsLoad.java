@@ -7,10 +7,12 @@ import org.bukkit.plugin.Plugin;
 public class SettingsLoad {
 
     public static int Chunks;
+    public static FileConfiguration fc;
 
     public void LoadSettings(FileConfiguration fileConfiguration, Plugin plugin){
-        fileConfiguration.getInt("Chunks");
-        plugin.getLogger().info("A number of load chunks was loaded."+Chunks);
+        fc = fileConfiguration;
+        fc.getInt("Chunks");
+        plugin.getLogger().info("A number of load chunks was loaded.:"+Chunks);
     }
 
     public int getChunks(){

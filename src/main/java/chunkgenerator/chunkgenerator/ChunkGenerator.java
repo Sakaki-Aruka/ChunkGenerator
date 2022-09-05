@@ -14,6 +14,7 @@ public final class ChunkGenerator extends JavaPlugin {
     public void load(){
         //data load class startup
         Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("ChunkGenerator");
+        FC = getConfig();
         new SettingsLoad().LoadSettings(FC,plugin);
     }
 

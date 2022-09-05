@@ -23,7 +23,7 @@ public final class ChunkGenerator extends JavaPlugin {
         // Plugin startup logic
         saveDefaultConfig();
         this.load();
-        getCommand("Biomes").setExecutor(new ChunkGenerator());
+        getCommand("Biomes").setExecutor(new Generator());
 
     }
 

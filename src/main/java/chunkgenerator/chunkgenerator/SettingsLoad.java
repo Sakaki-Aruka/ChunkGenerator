@@ -8,11 +8,17 @@ public class SettingsLoad {
 
     public static int Chunks;
     public static FileConfiguration fc;
+    private static Plugin plugin_;
 
     public void LoadSettings(FileConfiguration fileConfiguration, Plugin plugin){
         fc = fileConfiguration;
-        fc.getInt("Chunks");
-        plugin.getLogger().info("A number of load chunks was loaded.:"+Chunks);
+        plugin_ = plugin;
+        this.load();
+    }
+
+    public void load(){
+        Chunks = fc.getInt("Chunks");
+        plugin_.getLogger().info("A number of load chunks was loaded.:"+Chunks);
     }
 
     public int getChunks(){

@@ -1,0 +1,5 @@
+name: ChunkGenerator
+version: '${project.version}'
+main: chunkgenerator.chunkgenerator.ChunkGenerator
+api-version: 1.19
+authors: [ SakakiAruka ]

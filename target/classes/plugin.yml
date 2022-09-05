@@ -1,0 +1,8 @@
+name: ChunkGenerator
+version: '1'
+main: chunkgenerator.chunkgenerator.ChunkGenerator
+api-version: 1.19
+authors: [ SakakiAruka ]
+commands:
+  biomes:
+    permission: cg

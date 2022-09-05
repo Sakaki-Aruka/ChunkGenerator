@@ -1,3 +1,6 @@
+
+*.lst
+
 # User-specific stuff
 .idea/
 

@@ -3,19 +3,19 @@ package chunkgenerator.chunkgenerator;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
+
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ChunkGenerator extends JavaPlugin {
 
-    public static FileConfiguration FC = new YamlConfiguration();
+    public static FileConfiguration FC;
+    public final Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("ChunkGenerator");
 
     public void load(){
         //data load class startup
-        Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("ChunkGenerator");
         FC = getConfig();
-        new SettingsLoad().LoadSettings(FC,plugin);
+        new SettingsLoad().LoadSettings(FC);
     }
 
     @Override

@@ -1,18 +1,19 @@
 package chunkgenerator.chunkgenerator;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Server;
 import org.bukkit.configuration.file.FileConfiguration;
 
-import org.bukkit.plugin.Plugin;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.world.ChunkEvent;
+import org.bukkit.event.world.ChunkLoadEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class ChunkGenerator extends JavaPlugin {
+public final class ChunkGenerator extends JavaPlugin{
 
-    public static FileConfiguration FC;
-    public final Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("ChunkGenerator");
+    public static FileConfiguration FC = new YamlConfiguration();
 
-    public void load(){
+    public void load() {
         //data load class startup
         FC = getConfig();
         new SettingsLoad().LoadSettings(FC);
@@ -24,6 +25,7 @@ public final class ChunkGenerator extends JavaPlugin {
         saveDefaultConfig();
         this.load();
         getCommand("Biomes").setExecutor(new Generator());
+        getServer().getPluginManager().registerEvents(new LoadCatch(),this);
 
     }
 
@@ -31,4 +33,5 @@ public final class ChunkGenerator extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
     }
+
 }

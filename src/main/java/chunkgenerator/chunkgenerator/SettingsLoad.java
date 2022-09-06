@@ -7,7 +7,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 public class SettingsLoad {
 
     private static int Chunks;
-    private static FileConfiguration fc;
+    public static FileConfiguration fc;
 
 
     public void LoadSettings(FileConfiguration fileConfiguration){
@@ -16,7 +16,7 @@ public class SettingsLoad {
     }
 
     public void load(){
-        Chunks = fc.getInt("Chunks");
+        Chunks = fc.getInt("Chunks") * 16;
         Bukkit.getServer().getLogger().info("ChunkGenerator Loaded a config value.:"+Chunks);
     }
 
